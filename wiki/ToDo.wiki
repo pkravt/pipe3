@@ -32,12 +32,14 @@ _pk: Это разумно. Потому как бак один на всю ве
 
 Тогда имеет смысл добавить в класс ветки свойство `FlowDirection` со значениями `fdSupply=0` и `fdReceive=1`, и массив `Tank[0..1] of TTank`. В структуру `TTank` нужно  добавить свойство типа бака (Experimental, Cylindrical, Custom), и можно перенести туда свойства `Tank_H` и `Tank_D`, хотя это потребует много переделок, но в принципе будет правильным. Тогда вся информация о баке ветки будет сосредоточена в свойстве `Tank[FlowDirection]` для всех веток, включая главную. Единственная сложность, которую я пока вижу - это при смене `FlowDirection` ветки придется копировать структуру `Tank`.
 
-_mix: Вместо `Tank[FlowDirection]` будет использоваться следующая конструкция `Tank[GetTankIndex(TubeIndex)]`. Здесь: GetTankIndex() - метод класса Branch, TubeIndex - индекс текущего сегмента._
+_mix: Вместо `Tank[FlowDirection]` будет использоваться следующая конструкция `TankGetTankIndex(TubeIndex)]`. Здесь: `GetTankIndex()` - метод класса Branch, TubeIndex - индекс текущего сегмента._
 ----
-`Function TBranch.GetTankIndex(TubeIndex:Integer):Byte;
+`
+Function TBranch.GetTankIndex(TubeIndex:Integer):Byte;
 begin
-  if Bnum = 0 then Result:=sign(TubeIndex) else Result := FlowDirection
-end;`
+  if Bnum = 0 then Result:=sign(TubeIndex) else Result := FlowDirection;
+end;
+`
 ----
 
 
