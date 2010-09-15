@@ -34,12 +34,12 @@ _pk: Это разумно. Потому как бак один на всю ве
 
 _mix: Вместо `Tank[FlowDirection]` будет использоваться следующая конструкция `TankGetTankIndex(TubeIndex)]`. Здесь: `GetTankIndex()` - метод класса Branch, `TubeIndex` - индекс текущего сегмента._
 ----
-[[[
+{{{
 Function TBranch.GetTankIndex(TubeIndex:Integer):Byte;
 begin
   if Bnum = 0 then Result:=sign(TubeIndex) else Result := FlowDirection;
 end;
-]]]
+}}}
 ----
 
 
