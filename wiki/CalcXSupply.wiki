@@ -26,84 +26,44 @@ http://lkst.pnpi.nw.ru/tmp/my/AIRBUS/CalcXSupply.png
 {{{
 22.05.11 18:56:51	     Calc Walk X: Branch #0; Segment #3
 22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #1
-
 22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #2 (entrance)
-
 22.05.11 18:56:51	     Calc Walk X: Branch #1; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #4
-
 22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #3
-
 22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #2 (entrance)
-
 22.05.11 18:56:51	     Calc Walk X: Branch #2; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #2; Segment #2
-
 22.05.11 18:56:51	SEGMENT X: Branch #2; Segment #1
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #2
-
 22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #2 (junction)
-
 22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #1
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #1
-
 22.05.11 18:56:51	     Calc Walk X: Branch #3; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #4
-
 22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #3
-
 22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #2 (entrance)
-
 22.05.11 18:56:51	     Calc Walk X: Branch #4; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #4
-
 22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #3
-
 22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #2 (entrance)
-
 22.05.11 18:56:51	     Calc Walk X: Branch #5; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #4
-
 22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #3
-
 22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #2 (entrance)
-
 22.05.11 18:56:51	     Calc Walk X: Branch #6; Segment #0
-
 22.05.11 18:56:51	SEGMENT X: Branch #6; Segment #2
-
 22.05.11 18:56:51	SEGMENT X: Branch #6; Segment #1
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #6
-
 22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #2 (junction)
-
 22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #1
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #5
-
 22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #2 (junction)
-
 22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #1
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #4
-
 22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #2 (junction)
-
 22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #1
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #3
-
 22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #2 (junction)
-
 22.05.11 18:56:51	|--> Branch calc finished: Branch #0
 }}}
