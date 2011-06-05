@@ -80,3 +80,4 @@
 || Выходной бак главной ветки || `Branch[BranchesNum-1].Tube[Branch[BranchesNum-1].ObjectsNum-1]` || `MainBranch.ReceiveTank`||
 || Бак дочерней ветки || `Branch[].Tube[Branch[].ObjectsNum-1]` || `Branch.Tank` ||
 || Тип дочерней ветки || `Branch[].FlowDirection` || `Branch.Tank.FlowDirection` ||
+|| Сегменты в порядке от Receive к Supply  || `Branch[].Tube[GetTubeIndex(0)] - Branch[].Tube[GetTubeIndex(1)] ` || `Branch.OrderedSegments` ||
