@@ -73,11 +73,11 @@
 ==Соответствие с дельфи==
 || *Класс, метод, тип* || *Дельфи* || *Шарп* ||
 || Ветка || `TBranch` || `MainBranch` - для главной;<br>`Branch` - для дочерних||
-|| Сегменты ветки || `TBranch.Tube[]` - массив  || `Branch.Segments` - список ||
+|| Сегменты ветки || `TBranch.Tube[]` - массив  || `Branch.Segments[]` - список ||
 || Основной массив веток || `Branch` - глобальный массив  || `Pipe2.MainBranch` - главная ветка<br>`Pipe2.MainBranch[]` - дочерние ветки у главной и далее - по иерархии||
 || Общее количество веток || `BranchesNum` || `MainBranch.GetAllChildBranchCount()` ||
 || Входной бак главной ветки || `Branch[0].Tube[0]` || `MainBranch.SupplyTank`||
 || Выходной бак главной ветки || `Branch[BranchesNum-1].Tube[Branch[BranchesNum-1].ObjectsNum-1]` || `MainBranch.ReceiveTank`||
 || Бак дочерней ветки || `Branch[].Tube[Branch[].ObjectsNum-1]` || `Branch.Tank` ||
 || Тип дочерней ветки || `Branch[].FlowDirection` || `Branch.Tank.FlowDirection` ||
-|| Сегменты в порядке от Receive к Supply  || `Branch[].Tube[GetTubeIndex(0)] - Branch[].Tube[GetTubeIndex(1)] ` || `Branch.OrderedSegments` ||
+|| Сегменты в порядке от Receive к Supply  || `Branch[].Tube[GetTubeIndex(0)] - Branch[].Tube[GetTubeIndex(1)] ` || `Branch.FlowOrderedSegments[]` - список ||
