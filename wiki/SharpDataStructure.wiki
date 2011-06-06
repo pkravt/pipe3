@@ -75,7 +75,7 @@
 || Ветка || `TBranch` || `MainBranch` - для главной;<br>`Branch` - для дочерних||
 || Сегменты ветки || `TBranch.Tube[]` - массив  || `Branch.Segments[]` - список ||
 || Основной массив веток || `Branch` - глобальный массив  || `Pipe2.MainBranch` - главная ветка<br>`Pipe2.MainBranch[]` - дочерние ветки у главной и далее - по иерархии||
-|| Общее количество веток || `BranchesNum` || `MainBranch.GetAllChildBranchCount()` ||
+|| Общее количество веток в трубе || `BranchesNum` || `MainBranch.GetAllChildBranchCount() + 1` ||
 || Входной бак главной ветки || `Branch[0].Tube[0]` || `MainBranch.SupplyTank`||
 || Выходной бак главной ветки || `Branch[BranchesNum-1].Tube[Branch[BranchesNum-1].ObjectsNum-1]` || `MainBranch.ReceiveTank`||
 || Бак дочерней ветки || `Branch[].Tube[Branch[].ObjectsNum-1]` || `Branch.Tank` ||
