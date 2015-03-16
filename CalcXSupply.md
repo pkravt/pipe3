@@ -1,0 +1,71 @@
+## Алгоритм расчета X в расходной и приемной части трубопровода ##
+
+
+Расчет газосодержания в расходной части трубопровода отличается
+от обычного обхода ветвей трубопровода. Расчет газосодержания
+всегда должен идти по направлению потока, начиная от расходных
+баков, и кончая сегментом полного потока (FFS). Для этого реализована
+отдельная рекурсивная функция обхода расходной части трубопровода
+CalcWalkBranchSupply(BNum, StopTubeNum).
+
+Она перебирает сегменты ветки BNum, начиная с расходного бака, и кончая StopTubeNum. Для каждого обычного (не-джойнт) сегмента вызывается функция
+расчета газосодержания на входе сегмента CalcMassFlowQuality\_Seg.
+Для джойнт-сегмента также расчитывается входное газосодержание, после чего
+рекурсивно вызывается CalcWalkBranchSupply для всех веток, подключенных к данному джойнту. После этого расчитывается выходное газосодержание этого
+джойнта, и функция идет дальше по сегментам. Таким образом, учитывается
+газосодержание всех расходных ветвей.
+
+## Пример расчета для сильно разветвленного трубопровода ##
+
+Трубопровод:
+![http://lkst.pnpi.nw.ru/tmp/my/AIRBUS/CalcXSupply.png](http://lkst.pnpi.nw.ru/tmp/my/AIRBUS/CalcXSupply.png)
+
+Журнал обхода всех сегментов:
+```
+22.05.11 18:56:51	     Calc Walk X: Branch #0; Segment #3
+22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #1
+22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #2 (entrance)
+22.05.11 18:56:51	     Calc Walk X: Branch #1; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #4
+22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #3
+22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #2 (entrance)
+22.05.11 18:56:51	     Calc Walk X: Branch #2; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #2; Segment #2
+22.05.11 18:56:51	SEGMENT X: Branch #2; Segment #1
+22.05.11 18:56:51	|--> Branch calc finished: Branch #2
+22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #2 (junction)
+22.05.11 18:56:51	SEGMENT X: Branch #1; Segment #1
+22.05.11 18:56:51	|--> Branch calc finished: Branch #1
+22.05.11 18:56:51	     Calc Walk X: Branch #3; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #4
+22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #3
+22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #2 (entrance)
+22.05.11 18:56:51	     Calc Walk X: Branch #4; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #4
+22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #3
+22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #2 (entrance)
+22.05.11 18:56:51	     Calc Walk X: Branch #5; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #4
+22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #3
+22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #2 (entrance)
+22.05.11 18:56:51	     Calc Walk X: Branch #6; Segment #0
+22.05.11 18:56:51	SEGMENT X: Branch #6; Segment #2
+22.05.11 18:56:51	SEGMENT X: Branch #6; Segment #1
+22.05.11 18:56:51	|--> Branch calc finished: Branch #6
+22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #2 (junction)
+22.05.11 18:56:51	SEGMENT X: Branch #5; Segment #1
+22.05.11 18:56:51	|--> Branch calc finished: Branch #5
+22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #2 (junction)
+22.05.11 18:56:51	SEGMENT X: Branch #4; Segment #1
+22.05.11 18:56:51	|--> Branch calc finished: Branch #4
+22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #2 (junction)
+22.05.11 18:56:51	SEGMENT X: Branch #3; Segment #1
+22.05.11 18:56:51	|--> Branch calc finished: Branch #3
+22.05.11 18:56:51	SEGMENT X: Branch #0; Segment #2 (junction)
+22.05.11 18:56:51	|--> Branch calc finished: Branch #0
+```
+
+
+
+В приемной части трубопровода расчет делается аналогично, по направлению потока.
